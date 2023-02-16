@@ -34,20 +34,18 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Curso de Django: templates e boas práticas da Alura.
-- Como o Django funciona de forma prática
-- Criar variáveis de ambiente de forma prática com Python
-- Como funcionam os Templates e renderizações de página no Django
-- Como manter boas práticas de programação em projetos com Django
-- Criar suas próprias aplicações web utilizando a linguagem Python
+Projeto realizado junto coṁa Alura, para desenvolver e aprimorar conhecimentos sobre Django, templates e boas práticas, renderizações de página no Django, lidar com dados em uma aplicação Django utilizando banco de dados e lidar com arquivos de mídia no Django.
 
 <br>
 
 ## 📸 Gif
-Pagina do Alura Space
+Renderizações de página no Django
 
 <img width="70%" height="300" src="img/Alura-Space.gif"></img>
 
+Utilização do banco de dados
+
+<img width="70%" height="300" src="img/Alura-space-BD.gif"></img>
 
 <br>
 
