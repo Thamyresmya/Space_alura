@@ -69,3 +69,23 @@ class CadastroForms(forms.Form):
             }
         )
     )
+    
+    def clean_nome_cadastro(self):              #tem que ser dessa forma: clean_nome do campo que quer validar
+        nome = self.cleaned_data.get("nome_cadastro")
+        
+        if nome:
+            nome = nome.strip()             #strip tira os espaço no inicio e no fim 
+            if " " in nome:                 #se existir um espaço dentro do nome não valida
+               raise forms.ValidationError("Espaços não são permitidos nesse campo") 
+            else:
+                return nome
+            
+    def clean_senha_2(self):                                                #valida se as senhas são iguais e retorna para pag cadastro novamente
+        senha_1 = self.cleaned_data.get("senha_1")
+        senha_2 = self.cleaned_data.get("senha_2")
+        
+        if senha_1 and senha_2:
+            if senha_1 != senha_2:
+                raise forms.ValidationError("Senhas não são iguais")
+            else:
+                return senha_2

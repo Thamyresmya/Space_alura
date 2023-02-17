@@ -1,7 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from galeria.models import Fotografia
+from django.contrib import messages
 
 def index(request):   # recebe a requisição 
+    if not request.user.is_authenticated:    #verficação se esta logado
+        messages.error(request, "Usuário não logado")
+        return redirect('login')
+    
     fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)         # filtro para aparecer publicações  # ordenação pelo mais recente  #mais antigo coloca o - na frente
     return render(request, 'galeria/index.html', {"cards": fotografias})    #após a requisição, vai apresentar o index.html
 
@@ -12,6 +17,10 @@ def imagem(request, foto_id):
 
 # função para busca
 def buscar(request):
+    if not request.user.is_authenticated:    #verficação se esta logado
+        messages.error(request, "Usuário não logado")
+        return redirect('login')    
+    
     fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)   #busca todos os itens do BD
     
     if "buscar" in request.GET:

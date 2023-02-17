@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime 
+from django.contrib.auth.models import User
 
 class Fotografia(models.Model):
     
@@ -19,7 +20,13 @@ class Fotografia(models.Model):
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)                 #local onde sera salvo as fotos sera salvo em uma pasta de ano e outra de dia
     publicada = models.BooleanField(default=False)                                 #esperar para ainda publicar
     data_fotografia = models.DateTimeField(default=datetime.now, blank=False)      #incluir data atual do cadastro
-       
+    usuario = models.ForeignKey(
+        to=User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=False,
+        related_name='user'
+    )   
         
     def __str__(self):
         return self.nome             #aparecer nome lá no db

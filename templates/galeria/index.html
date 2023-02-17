@@ -1,6 +1,6 @@
 {% extends 'galeria/base.html' %}
 {% load static %}
-{%  block content %} 
+{% block content %}
             <section class="conteudo">
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
@@ -21,35 +21,32 @@
                         <ul class="cards__lista">
                             {% if cards %}
                             {% for fotografia in cards %}
-                                <li class="card">
-                                    <a href="{% url 'imagem' fotografia.id %}">
-                                    {% if fotografia.foto == "" or fotografia.foto == null %}
-                                        <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.jpg'%}" alt="foto">
-                                    {% else %}
-                                        <img class="card__imagem" src="{{ fotografia.foto.url }}" alt="foto">
-                                    {% endif %}
-                                    </a>
-                                    <span class="card__tag">Estrelas</span>
-                                    <div class="card__info">
-                                        <p class="card__titulo">{{ fotografia.nome }}</p>
-                                        <div class="card__texto">
-                                            <p class="card__descricao">{{ fotografia.legenda }}</p>
-                                            <span>
-                                                <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                            </span>
-                                        </div>
+                            <li class="card">
+                                <a href="{% url 'imagem' fotografia.id %}">
+                                {% if fotografia.foto == "" or fotografia.foto == null %}
+                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png'%}" alt="foto">
+                                {% else %}
+                                    <img class="card__imagem" src="{{ fotografia.foto.url }}" alt="foto">
+                                {% endif %}
+                                </a>
+                                <span class="card__tag">Estrelas</span>
+                                <div class="card__info">
+                                    <p class="card__titulo">{{fotografia.nome}}</p>
+                                    <div class="card__texto">
+                                        <p class="card__descricao">{{fotografia.legenda}}</p>
+                                        <span>
+                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                        </span>
                                     </div>
-                                </li>
+                                </div>
+                            </li>
                             {% endfor %}
                             {% else %}
-                            <div class="imagem__texto">
-                                <p>Fotografias não encontrada</p>
-                            </div>  
-                            {% endif %}          
+                            {% endif %}
                         </ul>
-                    </div>                    
+                    </div>
                 </section>
             </section>
         </main>
     </div>
- {% endblock %}
+{% endblock %}

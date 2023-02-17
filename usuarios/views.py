@@ -29,7 +29,6 @@ def login(request):
 
     return render(request, 'usuarios/login.html', {'form': form})
 
-
 def cadastro(request):
     form = CadastroForms()   # Variavel que vai receber o form // inicialização
    
@@ -37,10 +36,6 @@ def cadastro(request):
         form = CadastroForms(request.POST)     #vai pegar as informações do formulario e vai colocar dentro de um formulario novo
         
         if form.is_valid():                                                  # se as informações estão validas
-            if form["senha_1"].value() != form["senha_2"].value():           #valida se as senhas são iguais e retorna para pag cadastro novamente
-                messages.error(request, "Senhas não são iguais")
-                return redirect('cadastro')                                  #passa o nome da rota que pretende ir
-            
             nome=form["nome_cadastro"].value()                               #coloca os nomes iguais ao que esta no froms
             email=form["email"].value()                                      #pega as informações do form e colca em variaveis
             senha=form["senha_1"].value()            
@@ -59,6 +54,8 @@ def cadastro(request):
             return redirect('login')
             
     return render(request, "usuarios/cadastro.html", {"form": form})
+
+
 
 def logout(request):
     auth.logout(request)
