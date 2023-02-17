@@ -34,18 +34,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Projeto realizado junto coṁa Alura, para desenvolver e aprimorar conhecimentos sobre Django, templates e boas práticas, renderizações de página no Django, lidar com dados em uma aplicação Django utilizando banco de dados e lidar com arquivos de mídia no Django.
+Projeto realizado junto coṁa Alura, para desenvolver e aprimorar conhecimentos sobre Django, templates e boas práticas, renderizações de página no Django, lidar com dados em uma aplicação Django utilizando banco de dados e lidar com arquivos de mídia no Django, criação de formulários, validações no dados passados nos formulários, criação de mensagens de alerta que são dinâmicas ao conteúdo, Estruturas partials para evitar duplicação de código.
 
 <br>
 
 ## 📸 Gif
-Renderizações de página no Django
 
-<img width="70%" height="300" src="img/Alura-Space.gif"></img>
+Páginas do projeto
 
-Utilização do banco de dados
-
-<img width="70%" height="300" src="img/Alura-space-BD.gif"></img>
+<img width="70%" height="300" src="img/alura-space-ok.gif"></img>
 
 <br>
 
